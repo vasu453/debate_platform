@@ -15,7 +15,7 @@ const token = authHeader.startsWith("Bearer ")
   : authHeader;
 
 try {
-  const decoded = jwt.verify(token, process.env.JWT_SECRET || "fallbacksecret123");
+  const decoded = jwt.verify(token, process.env.JWT_SECRET);
   req.user = decoded;
   next();
 } catch (err) {
