@@ -1,15 +1,17 @@
 import { useState } from "react";
 import API from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     API.post("/auth/login", { email, password })
       .then(res => {
         localStorage.setItem("token", res.data.token); // 🔧 STORE TOKEN
-        window.location.href = "/home"; // redirect
+        navigate("/home");
       })
       .catch(err => console.log(err));
   };
