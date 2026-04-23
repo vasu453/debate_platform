@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://debate-platform-wzm3.onrender.com",
+  baseURL: "https://debate-platform-wzm3.onrender.com/api",
 });
 
 // 🔧 ADD THIS
