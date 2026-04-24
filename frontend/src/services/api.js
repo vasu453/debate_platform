@@ -10,6 +10,7 @@ API.interceptors.request.use((req) => {
   if (token) {
     req.headers.Authorization = `Bearer ${token}`; // 🔥 IMPORTANT
   }
+  console.log("API CALL:", req.baseURL + req.url);
 
   return req;
 });
